@@ -218,3 +218,19 @@ input:checked + .slider {
 input:checked + .slider::before {
   transform: translateX(24px);
 }
+.btn-outline {
+  border: 2px solid var(--text-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
