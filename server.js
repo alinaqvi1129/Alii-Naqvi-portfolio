@@ -47,7 +47,7 @@ Message: ${message}
 res.json({status:"Message Sent"});
 
 }catch(err){
-
+console.error("Nodemailer Error:", err.message || err);
 res.status(500).json({error:"Error sending email"});
 
 }

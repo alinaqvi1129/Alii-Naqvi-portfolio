@@ -11,9 +11,10 @@ var typed = new Typed(".typing", {
 
 
 // --- BACKEND INTEGRATION ---
+const API_BASE = 'http://localhost:5000';
 
 // 1. Ping Server Status
-fetch('/api/ping')
+fetch(`${API_BASE}/api/ping`)
   .then(res => res.json())
   .then(data => {
     if (data.status === 'online') {
@@ -28,7 +29,7 @@ fetch('/api/ping')
   .catch(err => console.log('Server is offline or not running locally.'));
 
 // 2. Fetch and Load Likes
-fetch('/api/likes')
+fetch(`${API_BASE}/api/likes`)
   .then(res => res.json())
   .then(likes => {
     document.querySelectorAll('.like-btn').forEach(btn => {
@@ -50,7 +51,7 @@ document.querySelectorAll('.like-btn').forEach(btn => {
     const countSpan = this.querySelector('.like-count');
     countSpan.innerText = parseInt(countSpan.innerText) + 1; // optimistic UI update
 
-    fetch(`/api/likes/${projectId}`, { method: 'POST' })
+    fetch(`${API_BASE}/api/likes/${projectId}`, { method: 'POST' })
       .then(res => res.json())
       .then(data => {
         if (data.success) {
@@ -61,7 +62,7 @@ document.querySelectorAll('.like-btn').forEach(btn => {
   });
 });
 
-// 4. Contact form via backend instead of EmailJS
+// 5. Contact form via backend instead of EmailJS
 document.getElementById("contact-form").addEventListener("submit", function(e){
   e.preventDefault();
 
@@ -69,7 +70,7 @@ document.getElementById("contact-form").addEventListener("submit", function(e){
   const ogText = submitBtn.innerText;
   submitBtn.innerText = "Sending...";
 
-  fetch('/contact', {
+  fetch(`${API_BASE}/contact`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

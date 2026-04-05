@@ -495,16 +495,16 @@ footer {
   animation: pop 0.4s ease;
 }
 
-.like-btn.liked i {
-  font-weight: 900; /* Solid heart */
-}
-
-@keyframes pop {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
-}
-
+  .like-btn.liked i {
+    font-weight: 900; /* Solid heart */
+  }
+  
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
 /* ================= PARTICLES BACKGROUND ================= */
 #particles-js {
   position: absolute;
