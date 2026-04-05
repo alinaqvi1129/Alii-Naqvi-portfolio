@@ -2,187 +2,230 @@
 <html lang="en">
 
 <head>
-  <link rel = "icon" type = "image/png"
-  href = "assets/1000024092.webp">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ali Naqvi Portfolio</title>
+  <link rel="icon" type="image/png" href="assets/1000024092.webp">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portfolio of Ali Naqvi, a developer focusing on Web Development, Game Development, and Machine Learning.">
+  <title>Ali Naqvi Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
 </head>
 
 <body>
 
-<header>
+  <header>
 
-<nav class="navbar">
+    <nav class="navbar">
 
-<h2 class="logo">Ali Naqvi</h2>
+      <div class="brand-container">
+        <h2 class="logo">Ali Naqvi</h2>
+        <div class="server-status" id="server-status" title="Server Status">
+          <div class="status-dot"></div>
+          <span class="status-text">Connecting...</span>
+        </div>
+      </div>
 
-<ul>
+      <div class="menu-icon" id="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
 
-<label class="theme-switch">
-  <input type="checkbox" id="darkToggle">
-  <span class="slider"></span>
-</label>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact</a></li>
+      <div class="nav-links" id="nav-links">
+        <ul>
 
-</ul>
+          <label class="theme-switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+          </label>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
 
-</nav>
+        </ul>
+      </div>
 
-</header>
+    </nav>
 
-<section id="home" class="hero">
+  </header>
 
-<div class="hero-text">
+  <section id="home" class="hero">
+    
+    <!-- Particles floating background -->
+    <div id="particles-js"></div>
 
-<h1>Hi, I'm Ali Naqvi</h1>
+    <div class="hero-text" data-aos="fade-right">
 
-<h2><span class="typing"></span></h2>
+      <h1>Hi, I'm Ali Naqvi</h1>
 
-<p>
-I build beautiful websites, games and software projects.
-Currently learning DSA, Machine Learning and Full Stack Development.
-</p>
+      <h2><span class="typing"></span></h2>
 
-<div class="buttons">
+      <p>
+        I build beautiful websites, games and software projects.
+        Currently learning DSA, Machine Learning and Full Stack Development.
+      </p>
 
-<a href="#contact" class="btn">Hire Me</a>
-<a href="ALI ABBAS NAQVI  (1).pdf" download class="btn-outline">
-  <i class="fas fa-download"></i> Download CV
-</a>
+      <div class="buttons">
 
-</div>
+        <a href="#contact" class="btn">Hire Me</a>
+        <a href="ALI ABBAS NAQVI  (1).pdf" download class="btn-outline">
+          <i class="fas fa-download"></i> Download CV
+        </a>
 
-<div class="social">
+      </div>
 
-<a href="https://github.com/alinaqvi17" target="_blank">
-<i class="fab fa-github"></i>
-</a>
+      <div class="social">
 
-<a href="www.linkedin.com/in/ali-naqvi-49b427316" target="_blank">
-<i class="fab fa-linkedin"></i>
-</a>
+        <a href="https://github.com/alinaqvi17" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
 
-<a href="https://instagram.com/voidrxshi" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
+        <a href="www.linkedin.com/in/ali-naqvi-49b427316" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
 
-</div>
+        <a href="https://instagram.com/voidrxshi" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
 
-</div>
+      </div>
 
-<div class="hero-img">
+    </div>
 
-<img src="assets/1000024092.webp" alt= "Ali">
+    <div class="hero-img" data-aos="fade-left">
 
-</div>
+      <img src="assets/1000024092.webp" alt="Ali">
 
-</section>
+    </div>
 
+  </section>
 
-<section id="about">
 
-<h2>About Me</h2>
+  <section id="about" data-aos="fade-up">
 
-<p>
-I'm a passionate developer currently in first year of college.
-I love building projects, learning algorithms and exploring AI.
-</p>
+    <h2>About Me</h2>
 
-</section>
+    <p>
+      I'm a passionate developer currently in first year of college.
+      I love building projects, learning algorithms and exploring AI.
+    </p>
 
+  </section>
 
-<section id="projects">
 
-<h2>Projects</h2>
+  <section id="projects">
 
-<div class="project-container">
+    <h2 data-aos="fade-up">Projects</h2>
 
-<div class="card">
-<h3>Jump Game</h3>
-<p>Java based jumper game.</p>
-</div>
+    <div class="project-container">
 
-<div class="card">
-<h3>Portfolio Website</h3>
-<p>Personal responsive website.</p>
-</div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="100">
+        <h3>Jump Game</h3>
+        <p>Java based jumper game.</p>
+        <button class="like-btn" data-project-id="proj1">
+          <i class="far fa-heart"></i> <span class="like-count">0</span>
+        </button>
+      </div>
 
-<div class="card">
-<h3>Machine Learning Model</h3>
-<p>Prediction system using Python.</p>
-</div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Portfolio Website</h3>
+        <p>Personal responsive website.</p>
+        <button class="like-btn" data-project-id="proj2">
+          <i class="far fa-heart"></i> <span class="like-count">0</span>
+        </button>
+      </div>
 
-</div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+        <h3>Machine Learning Model</h3>
+        <p>Prediction system using Python.</p>
+        <button class="like-btn" data-project-id="proj3">
+          <i class="far fa-heart"></i> <span class="like-count">0</span>
+        </button>
+      </div>
 
-</section>
+    </div>
 
+  </section>
 
-<section id="services">
 
-<h2>Services</h2>
+  <section id="services">
 
-<div class="services">
+    <h2 data-aos="fade-up">Services</h2>
 
-<div class="service-card">
+    <div class="services">
 
-<i class="fa fa-code"></i>
-<h3>Web Development</h3>
+      <div class="service-card" data-aos="flip-left" data-aos-delay="100">
 
-</div>
+        <i class="fa fa-code"></i>
+        <h3>Web Development</h3>
 
-<div class="service-card">
+      </div>
 
-<i class="fa fa-gamepad"></i>
-<h3>Game Development</h3>
+      <div class="service-card" data-aos="flip-left" data-aos-delay="200">
 
-</div>
+        <i class="fa fa-gamepad"></i>
+        <h3>Game Development</h3>
 
-<div class="service-card">
+      </div>
 
-<i class="fa fa-brain"></i>
-<h3>Machine Learning</h3>
+      <div class="service-card" data-aos="flip-left" data-aos-delay="300">
 
-</div>
+        <i class="fa fa-brain"></i>
+        <h3>Machine Learning</h3>
 
-</div>
+      </div>
 
-</section>
+    </div>
 
+  </section>
 
 
-<section id="contact">
 
-<h2>Contact Me</h2>
+  <section id="contact" data-aos="fade-up">
 
-<form id="contact-form">
+    <h2>Contact Me</h2>
 
-<input type="text" id="name" placeholder="Your Name" required>
+    <form id="contact-form">
 
-<input type="email" id="email" placeholder="Your Email" required>
+      <input type="text" id="name" placeholder="Your Name" required>
 
-<textarea id="message" placeholder="Your Message" required></textarea>
+      <input type="email" id="email" placeholder="Your Email" required>
 
-<button type="submit">Send</button>
+      <textarea id="message" placeholder="Your Message" required></textarea>
 
-</form>
+      <button type="submit">Send</button>
 
-</section>
+    </form>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script src="script.js"></script>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Ali Naqvi. All Rights Reserved.</p>
+  </footer>
+
+  <button id="backToTop" title="Go to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
 
