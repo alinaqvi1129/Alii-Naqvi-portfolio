@@ -72,5 +72,4 @@ I'm a passionate developer interested in building impactful and user-friendly ap
 - Email: your- shakeelnaqvi35@gmail.com
 
 ## ⭐ Support
-
 If you like this project, consider giving it a star on GitHub!
