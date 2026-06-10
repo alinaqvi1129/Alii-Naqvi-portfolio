@@ -197,3 +197,40 @@ if (typeof particlesJS !== "undefined" && document.getElementById("particles-js"
     "retina_detect": true
   });
 }
+
+/* ================= ANIMATED STATS COUNTER ================= */
+const statNumbers = document.querySelectorAll('.stat-number');
+
+const countUp = (el) => {
+  const target = parseInt(el.getAttribute('data-target'));
+  const duration = 1500;
+  const step = Math.ceil(duration / target);
+  let current = 0;
+  const timer = setInterval(() => {
+    current++;
+    el.textContent = current;
+    if (current >= target) {
+      el.textContent = target + (target >= 5 ? '+' : '');
+      clearInterval(timer);
+    }
+  }, step);
+};
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      countUp(entry.target);
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+statNumbers.forEach(num => statsObserver.observe(num));
+
+/* ================= FIX LIKE BTN INSIDE ANCHOR ================= */
+document.querySelectorAll('.like-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }, true);
+});

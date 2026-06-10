@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="style.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
+
   <!-- AOS Animation CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -33,10 +33,6 @@
 
       <div class="brand-container">
         <h2 class="logo">Ali Naqvi</h2>
-        <div class="server-status" id="server-status" title="Server Status">
-          <div class="status-dot"></div>
-          <span class="status-text">Connecting...</span>
-        </div>
       </div>
 
       <div class="menu-icon" id="menu-icon">
@@ -52,6 +48,7 @@
           </label>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -64,7 +61,7 @@
   </header>
 
   <section id="home" class="hero">
-    
+
     <!-- Particles floating background -->
     <div id="particles-js"></div>
 
@@ -114,16 +111,106 @@
 
   </section>
 
+  <!-- ===== ANIMATED STATS ===== -->
+  <section id="stats" class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+        <span class="stat-number" data-target="3">0</span>
+        <span class="stat-label">Projects Built</span>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+        <span class="stat-number" data-target="2">0</span>
+        <span class="stat-label">AI Models Deployed</span>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+        <span class="stat-number" data-target="5">0</span>
+        <span class="stat-label">Technologies Used</span>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+        <span class="stat-number" data-target="1">0</span>
+        <span class="stat-label">Year of Experience</span>
+      </div>
+    </div>
+  </section>
 
+  <!-- ===== ABOUT ME (upgraded) ===== -->
   <section id="about" data-aos="fade-up">
 
     <h2>About Me</h2>
 
-    <p>
-      I'm a passionate developer currently in first year of college.
-      I love building projects, learning algorithms and exploring AI.
-    </p>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          I'm <strong>Ali Naqvi</strong>, a passionate developer in my first year of college.
+          I love building real-world projects, learning algorithms, and exploring the exciting world of AI and Machine Learning.
+        </p>
+        <p style="margin-top:14px">
+          My goal is to become a full-stack developer who also specialises in building intelligent systems.
+          I believe in learning by doing — every project I build teaches me something new.
+        </p>
+      </div>
 
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2024</span>
+            <h4>Started College</h4>
+            <p>Began pursuing Computer Science, diving deep into programming fundamentals.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2025</span>
+            <h4>First AI Projects</h4>
+            <p>Built AI Flight Fare Predictor & Netflix-style Movie Recommendation System.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">Now</span>
+            <h4>Learning & Growing</h4>
+            <p>Exploring Full Stack Development, DSA, and advanced Machine Learning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills">
+    <h2 data-aos="fade-up">Tech Stack</h2>
+    <div class="skills-grid">
+
+      <div class="skill-chip" data-aos="zoom-in" data-aos-delay="50">
+        <i class="fab fa-python"></i> Python
+      </div>
+      <div class="skill-chip" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fab fa-java"></i> Java
+      </div>
+      <div class="skill-chip" data-aos="zoom-in" data-aos-delay="150">
+        <i class="fab fa-html5"></i> HTML5
+      </div>
+      <div class="skill-chip" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fab fa-css3-alt"></i> CSS3
+      </div>
+      <div class="skill-chip" data-aos="zoom-in" data-aos-delay="250">
+        <i class="fab fa-js"></i> JavaScript
+      </div>
+      <div class="skill-chip" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fab fa-github"></i> Git & GitHub
+      </div>
+      <div class="skill-chip" data-aos="zoom-in" data-aos-delay="350">
+        <i class="fas fa-brain"></i> Machine Learning
+      </div>
+      <div class="skill-chip" data-aos="zoom-in" data-aos-delay="400">
+        <i class="fas fa-database"></i> SQL
+      </div>
+
+    </div>
   </section>
 
 
@@ -133,32 +220,77 @@
 
     <div class="project-container">
 
-      <div class="card" data-aos="zoom-in" data-aos-delay="100">
-        <h3>Jump Game</h3>
-        <p>Java based jumper game.</p>
-        <button class="like-btn" data-project-id="proj1">
-          <i class="far fa-heart"></i> <span class="like-count">0</span>
-        </button>
-      </div>
+      <a href="https://flightfare1129.streamlit.app/" target="_blank" rel="noopener noreferrer" class="card-link">
+        <div class="card" data-aos="zoom-in" data-aos-delay="100">
+          <h3>AI Flight Fare Predictor</h3>
+          <p>ML-powered app to predict flight ticket prices using Python & Streamlit.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">ML</span>
+            <span class="tech-tag">Streamlit</span>
+          </div>
+          <span class="project-link-badge"><i class="fas fa-external-link-alt"></i> View Project</span>
+        </div>
+      </a>
 
-      <div class="card" data-aos="zoom-in" data-aos-delay="200">
-        <h3>Portfolio Website</h3>
-        <p>Personal responsive website.</p>
-        <button class="like-btn" data-project-id="proj2">
-          <i class="far fa-heart"></i> <span class="like-count">0</span>
-        </button>
-      </div>
+      <a href="https://movie-on-demand.onrender.com/" target="_blank" rel="noopener noreferrer" class="card-link">
+        <div class="card" data-aos="zoom-in" data-aos-delay="200">
+          <h3>AI Movie Recommendation System</h3>
+          <p>Netflix-style AI-powered movie recommender built with Python & ML.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">AI</span>
+            <span class="tech-tag">Flask</span>
+          </div>
+          <span class="project-link-badge"><i class="fas fa-external-link-alt"></i> View Project</span>
+        </div>
+      </a>
 
       <div class="card" data-aos="zoom-in" data-aos-delay="300">
-        <h3>Machine Learning Model</h3>
-        <p>Prediction system using Python.</p>
-        <button class="like-btn" data-project-id="proj3">
-          <i class="far fa-heart"></i> <span class="like-count">0</span>
-        </button>
+        <h3>This Portfolio</h3>
+        <p>Personal developer portfolio with dark mode, animations & backend.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Node.js</span>
+        </div>
       </div>
 
     </div>
 
+  </section>
+
+  <!-- ===== GITHUB SECTION ===== -->
+  <section id="github" data-aos="fade-up">
+    <h2>GitHub</h2>
+    <div class="github-box">
+      <div class="github-profile">
+        <i class="fab fa-github github-big-icon"></i>
+        <div>
+          <h3>@alinaqvi17</h3>
+          <p>Check out my open-source projects and contributions on GitHub.</p>
+        </div>
+        <a href="https://github.com/alinaqvi17" target="_blank" class="btn">View Profile</a>
+      </div>
+      <div class="github-repos">
+        <a href="https://github.com/alinaqvi17" target="_blank" class="repo-card">
+          <i class="fas fa-code-branch"></i>
+          <span>AI Flight Fare Predictor</span>
+          <span class="repo-lang">Python</span>
+        </a>
+        <a href="https://github.com/alinaqvi17" target="_blank" class="repo-card">
+          <i class="fas fa-code-branch"></i>
+          <span>AI Movie Recommender</span>
+          <span class="repo-lang">Python</span>
+        </a>
+        <a href="https://github.com/alinaqvi17" target="_blank" class="repo-card">
+          <i class="fas fa-code-branch"></i>
+          <span>Portfolio Website</span>
+          <span class="repo-lang">JavaScript</span>
+        </a>
+      </div>
+    </div>
   </section>
 
 
