@@ -19,20 +19,12 @@ A modern and responsive portfolio website built to showcase my projects, skills,
 - JavaScript
 
 > Replace these with the technologies you used (e.g., React, Tailwind CSS, Next.js).
-
-## 📸 Screenshots
-
-Add screenshots of your portfolio here.
-
-```md
-![Home Page](./screenshots/home.png)
-```
-
+> 
 ## 🔗 Live Demo
 
 Visit the website here:
 
-[Live Demo](https://your-portfolio-link.com)
+[Live Demo](https://alinaqviportfolio.netlify.app)
 
 ## ⚙️ Installation
 
@@ -75,9 +67,9 @@ I'm a passionate developer interested in building impactful and user-friendly ap
 
 ## 📫 Contact
 
-- GitHub: https://github.com/your-username
-- LinkedIn: https://linkedin.com/in/your-profile
-- Email: your-email@example.com
+- GitHub: https://github.com/alinaqvi1129
+- LinkedIn: https://linkedin.com/in/alinaqvi1129
+- Email: your- shakeelnaqvi35@gmail.com
 
 ## ⭐ Support
 
