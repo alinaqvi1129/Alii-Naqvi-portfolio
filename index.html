@@ -351,10 +351,76 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
+  <!-- ===== AI CHAT WIDGET ===== -->
+
+  <!-- Floating toggle button -->
+  <button id="chat-fab" title="Chat with AI" aria-label="Open AI chat">
+    <i class="fas fa-comment-dots" id="chat-fab-icon"></i>
+    <span class="chat-fab-ping"></span>
+  </button>
+
+  <!-- Slide-in chat panel -->
+  <div id="chat-panel" aria-label="AI Chatbot panel" role="complementary">
+
+    <!-- Panel header -->
+    <div class="chat-panel-header">
+      <div class="cp-avatar">🤖</div>
+      <div class="cp-info">
+        <h3>Ali's AI</h3>
+        <div class="cp-status-row">
+          <span class="cp-dot" id="cp-dot"></span>
+          <span class="cp-status-text" id="cp-status-text">Connecting…</span>
+        </div>
+      </div>
+      <div class="cp-header-actions">
+        <button class="cp-icon-btn" id="cp-clear" title="Clear chat" aria-label="Clear chat">
+          <i class="fas fa-trash-can"></i>
+        </button>
+        <button class="cp-icon-btn" id="cp-close" title="Close chat" aria-label="Close chat">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-panel-messages" id="cp-messages" role="log" aria-live="polite">
+      <div class="cp-welcome" id="cp-welcome">
+        <div class="cp-welcome-icon">✨</div>
+        <p class="cp-welcome-title">Hi, I'm Ali's AI!</p>
+        <p class="cp-welcome-sub">Powered by <strong>Mistral AI</strong>.<br>Ask me anything!</p>
+        <div class="cp-chips">
+          <button class="cp-chip" onclick="cpSendSuggestion('Explain ML in simple terms')">🧠 Explain ML</button>
+          <button class="cp-chip" onclick="cpSendSuggestion('Write a Python hello world')">🐍 Python code</button>
+          <button class="cp-chip" onclick="cpSendSuggestion('What skills should a CS student learn?')">💡 CS tips</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="chat-panel-input">
+      <div class="cp-offline-banner" id="cp-offline">
+        <i class="fas fa-circle-exclamation"></i> Backend offline — run <code>chatbot_server.py</code>
+      </div>
+      <div class="cp-input-row">
+        <textarea id="cp-input" placeholder="Ask me anything…" rows="1" maxlength="3000" aria-label="Chat message input"></textarea>
+        <button id="cp-send" aria-label="Send message">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+      <p class="cp-hint"><kbd>Enter</kbd> send &nbsp;·&nbsp; <kbd>Shift+Enter</kbd> new line</p>
+    </div>
+
+  </div>
+
+  <!-- Overlay (mobile) -->
+  <div id="chat-overlay" aria-hidden="true"></div>
+
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <!-- Marked.js for markdown in chat -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="script.js"></script>
 
 </body>
