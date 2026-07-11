@@ -1,0 +1,22 @@
+# netlify.toml — Netlify site configuration
+
+[build]
+  # Netlify Functions directory
+  functions = "netlify/functions"
+  # No build command needed (plain HTML/CSS/JS site)
+  publish = "."
+
+# ── API Redirects ──────────────────────────────────────────────────────────────
+# Route /api/chat  → /.netlify/functions/chat
+# Route /api/health → /.netlify/functions/health
+# This lets the frontend use the clean path /api/chat instead of the long one.
+
+[[redirects]]
+  from   = "/api/chat"
+  to     = "/.netlify/functions/chat"
+  status = 200
+
+[[redirects]]
+  from   = "/api/health"
+  to     = "/.netlify/functions/health"
+  status = 200

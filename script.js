@@ -10,90 +10,26 @@ var typed = new Typed(".typing", {
 });
 
 
-// --- BACKEND INTEGRATION ---
-const API_BASE = 'http://localhost:5000';
-
-// 1. Ping Server Status
-fetch(`${API_BASE}/api/ping`)
-  .then(res => res.json())
-  .then(data => {
-    if (data.status === 'online') {
-      const dot = document.querySelector('.status-dot');
-      const text = document.querySelector('.status-text');
-      if (dot && text) {
-        dot.classList.add('online');
-        text.innerText = 'Online';
-      }
-    }
-  })
-  .catch(err => console.log('Server is offline or not running locally.'));
-
-// 2. Fetch and Load Likes
-fetch(`${API_BASE}/api/likes`)
-  .then(res => res.json())
-  .then(likes => {
-    document.querySelectorAll('.like-btn').forEach(btn => {
-      const projectId = btn.getAttribute('data-project-id');
-      if (likes[projectId]) {
-        btn.querySelector('.like-count').innerText = likes[projectId];
-      }
-    });
-  })
-  .catch(err => console.log('Could not fetch likes.'));
-
-// 3. Handle Like Button Clicks
-document.querySelectorAll('.like-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    if (this.classList.contains('liked')) return;
-
-    this.classList.add('liked');
-    const projectId = this.getAttribute('data-project-id');
-    const countSpan = this.querySelector('.like-count');
-    countSpan.innerText = parseInt(countSpan.innerText) + 1; // optimistic UI update
-
-    fetch(`${API_BASE}/api/likes/${projectId}`, { method: 'POST' })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          countSpan.innerText = data.likes; // confirm actual count from server
-        }
-      })
-      .catch(err => console.log('Failed to post like'));
-  });
-});
-
-// 5. Contact form via backend instead of EmailJS
-document.getElementById("contact-form").addEventListener("submit", function(e){
+// --- CONTACT FORM (mailto fallback — works on Netlify with no backend) ---
+document.getElementById("contact-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const submitBtn = this.querySelector('button[type="submit"]');
-  const ogText = submitBtn.innerText;
-  submitBtn.innerText = "Sending...";
+  const name    = document.getElementById("name").value.trim();
+  const email   = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-  fetch(`${API_BASE}/contact`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value
-    })
-  })
-  .then(res => {
-    if (res.ok) {
-      alert("Message sent successfully via Backend!");
-      this.reset();
-    } else {
-      alert("Failed to send message via Backend.");
-    }
-  })
-  .catch(error => {
-    alert("Server error. Make sure your local Node server is running!");
-    console.log(error);
-  })
-  .finally(() => {
-    submitBtn.innerText = ogText;
-  });
+  const submitBtn = this.querySelector('button[type="submit"]');
+  submitBtn.innerText = "Opening mail…";
+
+  // Open user's mail client pre-filled — works without any server
+  const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+  const body    = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+  window.location.href = `mailto:shakeelnaqvi35@gmail.com?subject=${subject}&body=${body}`;
+
+  setTimeout(() => {
+    submitBtn.innerText = "Send";
+    this.reset();
+  }, 1500);
 });
 
 
@@ -241,8 +177,9 @@ document.querySelectorAll('.like-btn').forEach(btn => {
 (function () {
 
   // ── Config ──
-  const CP_API    = 'http://127.0.0.1:5000/chat';
-  const CP_HEALTH = 'http://127.0.0.1:5000/health';
+  // Netlify Function endpoints — work locally (via netlify dev) and in production
+  const CP_API    = '/api/chat';
+  const CP_HEALTH = '/api/health';
 
   // ── State ──
   let cpHistory  = [];
@@ -299,7 +236,7 @@ document.querySelectorAll('.like-btn').forEach(btn => {
       offlineEl.classList.remove('show');
     } else {
       dotEl.classList.remove('online');
-      statusEl.textContent = 'Offline — run chatbot_server.py';
+      statusEl.textContent = 'Offline — AI unavailable';
       offlineEl.classList.add('show');
     }
   }
@@ -423,7 +360,7 @@ document.querySelectorAll('.like-btn').forEach(btn => {
       if (err.name === 'TimeoutError') {
         renderMsg('bot', '⏱️ Timed out. Try again.', true);
       } else {
-        renderMsg('bot', '🔌 Cannot reach backend. Run `chatbot_server.py`.', true);
+        renderMsg('bot', '🔌 AI temporarily unavailable. Please try again later.', true);
         setOnline(false);
       }
     } finally {
