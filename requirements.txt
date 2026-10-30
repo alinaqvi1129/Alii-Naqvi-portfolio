@@ -1,5 +1,0 @@
-flask
-flask-cors
-langchain-mistralai
-langchain-core
-python-dotenv

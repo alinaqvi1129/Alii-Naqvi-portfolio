@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/png" href="assets/1000024092.webp">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ali Naqvi's tech blog — articles on Machine Learning, Web Development, Python, DevOps and more.">
+  <title>Blog — Ali Naqvi</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="brand-container">
+        <a href="index.html" class="logo" style="text-decoration:none;color:inherit">Ali Naqvi</a>
+      </div>
+
+      <div class="menu-icon" id="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <div class="nav-links" id="nav-links">
+        <ul>
+          <label class="theme-switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+          </label>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="blog.html" class="nav-active">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== BLOG HERO / PROFILE STRIP ===== -->
+  <section class="blog-hero">
+    <div class="blog-hero-inner" data-aos="fade-up">
+      <div class="blog-hero-text">
+        <h1>Ali Naqvi</h1>
+        <p class="blog-hero-sub">Writing about tech stacks, ML, web development, and the journey of a CS student building real-world projects.</p>
+        <div class="blog-hero-socials">
+          <a href="https://github.com/alinaqvi17" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/ali-naqvi-49b427316" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://instagram.com/voidrxshi" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="blog-hero-avatar">
+        <img src="assets/1000024092.webp" alt="Ali Naqvi">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER STRIP ===== -->
+  <div class="newsletter-strip">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <i class="fas fa-envelope-open-text"></i>
+        <span>Get notified about new articles</span>
+      </div>
+      <div class="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="Your email address" aria-label="Email address">
+        <button id="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TAG FILTER ===== -->
+  <section class="blog-list-section">
+    <div class="blog-list-header">
+      <h2 class="blog-list-title">All Articles</h2>
+      <div class="tag-filter" id="tag-filter">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- ===== POST GRID ===== -->
+    <div class="blog-grid" id="blog-grid">
+      <!-- Rendered by JS -->
+    </div>
+
+    <div class="blog-empty" id="blog-empty" style="display:none">
+      <i class="fas fa-search"></i>
+      <p>No posts found for this tag.</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2026 Ali Naqvi. All Rights Reserved. &nbsp;·&nbsp; <a href="index.html" style="color:var(--accent-color);text-decoration:none">Portfolio</a></p>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="blogs.js"></script>
+  <script src="blog-listing.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

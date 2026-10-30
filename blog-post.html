@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/png" href="assets/1000024092.webp">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" id="post-meta-desc" content="Read Ali Naqvi's tech blog posts.">
+  <title id="post-page-title">Post — Ali Naqvi</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Fira Code for code blocks -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Prism.js syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="brand-container">
+        <a href="index.html" class="logo" style="text-decoration:none;color:inherit">Ali Naqvi</a>
+      </div>
+
+      <div class="menu-icon" id="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <div class="nav-links" id="nav-links">
+        <ul>
+          <label class="theme-switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+          </label>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="blog.html" class="nav-active">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== POST CONTENT (rendered by JS) ===== -->
+  <main id="post-main">
+
+    <!-- Back button -->
+    <div class="post-back-wrap">
+      <a href="blog.html" class="post-back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Blog
+      </a>
+    </div>
+
+    <!-- Post header -->
+    <div class="post-header" id="post-header">
+      <!-- Filled by JS -->
+    </div>
+
+    <!-- Post cover image -->
+    <div class="post-cover-wrap" id="post-cover-wrap">
+      <!-- Filled by JS -->
+    </div>
+
+    <!-- Post body -->
+    <article class="post-body" id="post-body">
+      <!-- Filled by JS (Markdown → HTML) -->
+    </article>
+
+    <!-- Share strip -->
+    <div class="post-share" id="post-share">
+      <span class="post-share-label"><i class="fas fa-share-nodes"></i> Share this post</span>
+      <button class="share-btn share-x" id="share-x" title="Share on X / Twitter">
+        <i class="fab fa-x-twitter"></i> X / Twitter
+      </button>
+      <button class="share-btn share-linkedin" id="share-linkedin" title="Share on LinkedIn">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </button>
+      <button class="share-btn share-copy" id="share-copy" title="Copy link">
+        <i class="fas fa-link"></i> Copy Link
+      </button>
+    </div>
+
+    <!-- More posts -->
+    <section class="more-posts-section">
+      <h3 class="more-posts-title">More Articles</h3>
+      <div class="more-posts-grid" id="more-posts-grid">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2026 Ali Naqvi. All Rights Reserved. &nbsp;·&nbsp; <a href="index.html" style="color:var(--accent-color);text-decoration:none">Portfolio</a></p>
+  </footer>
+
+  <!-- ===== AI CHAT WIDGET ===== -->
+
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-docker.min.js"></script>
+  <script src="blogs.js"></script>
+  <script src="blog-post.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
